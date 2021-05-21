@@ -18,7 +18,6 @@ const initialState = {
 };
 class SignInScreen extends Component {
   state = initialState;
-  message = [];
 
   componentWillUnmount() {}
 
@@ -43,7 +42,10 @@ class SignInScreen extends Component {
 
     const onFailure = (error) => {
       console.log(error && error.response);
-      this.setState({errors: "email does'n match", isLoading: false});
+      this.setState({
+        errors: 'error! email and pass not match',
+        isLoading: false,
+      });
     };
 
     // Show spinner when call is made
@@ -54,36 +56,38 @@ class SignInScreen extends Component {
 
   getNonFieldErrorMessage() {
     // Return errors that are served in `non_field_errors`
+    let message = null;
     const {errors} = this.state;
     if (errors.non_field_errors) {
-      this.message.push(
+      message = (
         <View style={styles.errorMessageContainerStyle}>
           {errors.non_field_errors.map((item) => (
             <Text style={styles.errorMessageTextStyle} key={item}>
               {item}
             </Text>
           ))}
-        </View>,
+        </View>
       );
     }
-    // return message;
+    return message;
   }
 
   getErrorMessageByField(field) {
     // Checks for error message in specified field
     // Shows error message from backend
+    let message = null;
     if (this.state.errors[field]) {
-      this.message.push(
+      message = (
         <View style={styles.errorMessageContainerStyle}>
           {this.state.errors[field].map((item) => (
             <Text style={styles.errorMessageTextStyle} key={item}>
               {item}
             </Text>
           ))}
-        </View>,
+        </View>
       );
     }
-    // return message;
+    return message;
   }
 
   render() {
@@ -142,9 +146,7 @@ class SignInScreen extends Component {
                   placeholderTextColor="#999"
                 />
               </View>
-              <View>
-                <Text>{this.state.errors}</Text>
-              </View>
+              <Text>{this.state.errors}</Text>
               {/* {this.getErrorMessageByField('email')} */}
               <View style={STYLES.inputContainer}>
                 <Icon
@@ -172,9 +174,7 @@ class SignInScreen extends Component {
                   placeholderTextColor="#999"
                 />
               </View>
-              <View>
-                <Text>{this.state.errors}</Text>
-              </View>
+              <Text>{this.state.errors}</Text>
               {/* {this.getErrorMessageByField('password')}
 
               {this.getNonFieldErrorMessage()} */}
