@@ -35,12 +35,20 @@ android_library(
 
 android_build_config(
     name = "build_config",
+<<<<<<< HEAD
     package = "com.authscreenapp",
+=======
+    package = "com.hellopets",
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
 )
 
 android_resource(
     name = "res",
+<<<<<<< HEAD
     package = "com.authscreenapp",
+=======
+    package = "com.hellopets",
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
     res = "src/main/res",
 )
 

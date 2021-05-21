@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
   package="com.authscreenapp">
+=======
+  package="com.hellopets">
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,7 +25,11 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+<<<<<<< HEAD
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
+=======
+    </application>
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
 </manifest>

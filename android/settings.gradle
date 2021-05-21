@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 rootProject.name = 'AuthScreenApp'
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+=======
+rootProject.name = 'HelloPets'
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
