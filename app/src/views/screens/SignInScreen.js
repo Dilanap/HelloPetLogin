@@ -72,14 +72,14 @@ class SignInScreen extends Component {
     return message;
   }
 
-  getErrorMessageByField(field) {
+  getErrorMessageByField(email) {
     // Checks for error message in specified field
     // Shows error message from backend
     let message = null;
-    if (this.state.errors[field]) {
+    if (this.state.errors[email]) {
       message = (
         <View style={styles.errorMessageContainerStyle}>
-          {this.state.errors[field].map((item) => (
+          {this.state.errors[email].map((item) => (
             <Text style={styles.errorMessageTextStyle} key={item}>
               {item}
             </Text>

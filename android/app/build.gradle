@@ -121,6 +121,11 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
+<<<<<<< HEAD
+=======
+    ndkVersion rootProject.ext.ndkVersion
+
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     compileOptions {
@@ -129,7 +134,11 @@ android {
     }
 
     defaultConfig {
+<<<<<<< HEAD
         applicationId "com.authscreenapp"
+=======
+        applicationId "com.hellopets"
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -169,11 +178,19 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // https://developer.android.com/studio/build/configure-apk-splits.html
+<<<<<<< HEAD
+=======
+            // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
             def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
+<<<<<<< HEAD
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
+=======
+                        defaultConfig.versionCode * 1000 + versionCodes.get(abi)
+>>>>>>> a740925f20f97a72b28177e28f9dc39b273c76b1
             }
 
         }
